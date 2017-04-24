@@ -2,7 +2,7 @@
 
 \input{packageBoston}
 
-\title{Design of a urban sound scenes corpuses with controlled acoustic properties}     %% \title est une macro, entre { } figure son premier argument
+\title{Design and Perceptual Evaluation of a urban sound scenes corpus with controlled acoustic properties}     %% \title est une macro, entre { } figure son premier argument
 \author{
   GLOAGUEN, Jean-R\'emy\      \texttt{first1.last1@xxxxx.com}
   \and
@@ -198,9 +198,9 @@ Finally, the resulting database is composed of 245 sound events (bell, whistle b
 
 \section{Perceptual test} \label{sec:test}
 \subsection{Creation of the test}
-A perspective test is created where a panel of listeners evaluates the realism of a mix of real and replicated scenes on a 7-point scale (1 is \textit{not realistic at all}, 7 is \textit{very realistic}). Since it is not possible for each panelist to evaluate all the real and replicated scenes, in order to limit the duration of the test and to keep the judge's concentration constant, each listens a panel of 20 sound scenes composed of 10 real sounds scenes and 10 replicated. Furthermore, for the auditory comfort of the panelist, all the scenes are normalized to the same sound level, chosen at 65 dB.\\
+A perceptive test is conduected with a panel of listeners that are asked to evaluate the level of realism on a 7-point scale (1 is \textit{not realistic at all}, 7 is \textit{very realistic}). Evaluated scenes are  recorded and replicated ones. In order to limit the duration of the test and to preserve the concentration of the subjects, each subject listens a panel of 20 sound scenes composed of 10 real sounds scenes and 10 replicated among the 40 scenes available. All the scenes are normalized to the same sound level, chosen at 65 dB.\\
 
-First, the listening plan is elaborated following a Balanced Incomplete Block Design \cite{dagnelie_principes_2003} where $J$ participants realized $K$ evaluations from $B$ sound sources, each of them are tested $R$ times and each couple of sound sources are presented $\lambda$ times. 3 rules govern these parameters :
+The listening plan is elaborated following a Balanced Incomplete Block Design \cite{dagnelie_principes_2003} where $J$ participants realized $K$ evaluations from $B$ sound sources, each of them are tested $R$ times and each couple of sound sources are presented $\lambda$ times. 3 rules govern these parameters :
 \begin{subequations}\label{eq:BIE_cond}
 \begin{align}
 J &\geq B, \label{eq:BIE_cond1}\\
@@ -209,7 +209,7 @@ JK &= BR, \label{eq:BIE_cond2}\\
 \end{align}
 \end{subequations}
 
-with $\left[J, B, K, R, \lambda\right] \in \mathbb{N}$. A reasonable number of listeners is chosen at $J = 50$ and the total numberof sound sources $B$ to be tested is set at 40. It consists of 20 30-seconds audios from the recorded scene and the same 30 seconds from the replicated scenes. Among the 20 scenes, there are 5 scenes which belong to the ambience \textit{Park}, 6 from \textit{Quiet street}, 4 from \textit{noisy street} and 5 from \textit{very noisy street} chosen randomly among the 74 scenes. As (\ref{eq:BIE_cond3}) is not satisfied, the listening plan is finally elaborated following an optimal plan \cite{pages_blocs_2007}. It consists, with the parameters $J$, $K$ and $R$ fixed, to determine the optimal plan that would be the most balanced (figure \ref{fig:repartition}).\\
+with $\left[J, B, K, R, \lambda\right] \in \mathbb{N}$. A reasonable number of listeners is chosen at $J = 50$ and the total number of sound sources $B$ to be tested is set at 40. It consists of 20 30-seconds audios of the recorded scenes and the same 30 seconds from the replicated scenes. Among the 20 scenes, there are 5 scenes which belong to the ambience \textit{Park}, 6 from \textit{Quiet street}, 4 from \textit{noisy street} and 5 from \textit{very noisy street} chosen randomly among the 74 scenes. As (\ref{eq:BIE_cond3}) is not satisfied, the listening plan is finally elaborated following an optimal plan \cite{pages_blocs_2007}. It consists, with the parameters $J$, $K$ and $R$ fixed, to determine the optimal plan that would be the most balanced (figure \ref{fig:repartition}).\\
 
 \begin{figure}[ht]
 \centering
@@ -218,7 +218,7 @@ with $\left[J, B, K, R, \lambda\right] \in \mathbb{N}$. A reasonable number of l
 \label{fig:repartition}
 \end{figure}
 
-A web-page\footnote{http://soundthings.org/research/xpRealism} was uploaded on the 8 february 2007 and the number of 50 compiled test has been reached 12 days later. During the test, the participant had the possibility to listen each scene as many time as wanted before evaluating it without being able to change his judgment afterwards. He could also leave a comment on each audio to explain his note. Finally, his age, gender and experience on listening to urban sound mixtures were asked at the end of the test. In the end, the panel of 50 listeners was made of 31 males and 18 females (one not documented) with an average age of 36 ($\pm$ 12) years old. $62\%$ of the participants declared they had no experience in the listening of urban sound mixtures.\\
+A web-page\footnote{\url{http://soundthings.org/research/xpRealism}} was uploaded on the 8 february 2007 and the number of 50 participants has been reached 12 days later. During the test, the participant had the possibility to listen each scene as many time as wanted before evaluating it without being able to change his judgment afterwards. He could also leave a comment on each audio to explain his note. Finally, his age, gender and experience on listening to urban sound mixtures were asked at the end of the test. The panel of 50 listeners was made of 31 males and 18 females (one not documented) with an average age of 36 ($\pm$ 12) years old. $62\%$ of the participants declared they had no experience in the listening of urban sound mixtures.\\
 
 %\begin{figure}[ht]
 %\centering
@@ -231,7 +231,7 @@ A web-page\footnote{http://soundthings.org/research/xpRealism} was uploaded on t
 
 \subsection{Results}
 
-An analyze of variance (ANOVA) is performed to see if both type of scenes can be discernible. 2 hypothesis are then possible : $H_0$, the real and replicates scenes can not be discernible, and $H_1$, both scenes are perceived with differences. For that, an threshold significance $\alpha=0,05$ is compared to the \textit{p-value} calculated by the ANOVA. This value represents probability to have an extreme value or more than the actual data observed considering the $H_0$ hypothesis. Two situations can happen :
+An analysis of variance (ANOVA) is performed to check if there is a significant difference of realism between the recorded and the simulated scenes. 2 hypothesis are evaluated: $H_0$, the recorded and simulated scenes are not different in terms of realism, and $H_1$, both scenes are perceived with differences. For that, an threshold significance $\alpha=0,05$ is compared to the \textit{p-value} calculated by the ANOVA. This value represents the probability to have an extreme value or more than the actual data observed considering the $H_0$ hypothesis. Two situations can happen :
 \begin{itemize}
 \item $\alpha > p-value$, the $H_1$ hypothesis is validated and $H_0$ is rejected,
 \item $\alpha < p-value$, the $H_0$ is not rejected.
@@ -245,9 +245,9 @@ The data are represented by a box-and-whiskers plot according their type.
 \label{fig:boxplot_real_simul}
 \end{figure}
 
-The distribution of the note are extremely similar. The $p-value$ is calculated at $0.18 > \alpha$ which means that the two distribution cannot be distinguished. So the simulated scenes are perceived in a similar way than the recorded scenes. The mean for the simulated scene are even superior to the real ($m_{simul.} = 5.1 (\pm 1.6$), $ m_{real} = 4.9 (\pm 1.6$)). \\
+The distribution of the notations given by the subjects are extremely similar. The $p-value$ is calculated at $0.18 > \alpha$ which means that the two distribution cannot be distinguished. So the simulated scenes are perceived in a similar way than the recorded scenes. Although not significant, one can note that the mean for the simulated scene is even superior to the real ($m_{simul.} = 5.1 (\pm 1.6$), $ m_{real} = 4.9 (\pm 1.6$)). \\
 
-Secondly, an ANOVA is performed to determine if the experience in the listening of urban sound mixtures is an influential factor to distinguish real and replicated scenes. It is then a 2 dimensions ANOVA which is used. The test allow to determine  the influence of each dimension separately and their interaction. In this case, it means that the comportment of a dimension is depending on those of the other dimension. The $p-value$ associated is submitted on the two-hypotheses test (table~\ref{tab:p_value_type_exp}).\\
+A second ANOVA is performed to determine if the experience in the listening of urban sound mixtures is an influential factor to distinguish real and replicated scenes. It is then a 2 dimensions ANOVA which is used. The test allows us to determine  the influence of each dimension separately and their interaction. In this case, it means that the behavior of a dimension is depending on those of the other dimension. The $p-value$ associated is submitted on the two-hypotheses test (table~\ref{tab:p_value_type_exp}).\\
 
 \begin{table}[h]
 \centering
@@ -264,7 +264,7 @@ $p-value$ & 0.50 & 0.05 & 0.17 \\
 
 The dimensions and their interaction are not significantly influential since their $ p-value $ is equal to or greater than the $ \alpha$ significance threshold. This means that even listeners trained to hear urban sound environments do not dissociate the real scenes from the simulated ones.\\
 
-A last ANOVA is performed with 2 dimensions to see if the scenes according to the \textit{type} and their \textit{sound environment} are evaluated differently (figure~\ref{fig:boxplot_type_ambience} and table \ref{tab:p_value_type_ambience}).
+A last ANOVA is performed with 2 dimensions to check if the scenes according to the \textit{type} and their \textit{sound environment} are evaluated differently (figure~\ref{fig:boxplot_type_ambience} and table \ref{tab:p_value_type_ambience}).
 
 \begin{figure}[h]
 \centering
@@ -286,10 +286,15 @@ $p-value$ & $0.13$ & $0.80 \times 10^{-3}$     & $2.20 \times 10^{-3}$ \\
 \label{tab:p_value_type_ambience}
 \end{table}
 
-For the \textit{type} dimension, the effect is still not significance ($p-value > \alpha$) contrary to the \textit{sound environment} dimension. Thus, the realism of the listened scenes seems most influenced by the kind of sound environment than the type of sound scenes. As the mean of the \textit{noisy} and \textit{very noisy} atmospheres are higher, it seems that the presence of cars are a preponderant element to evaluate the realism of an audio mixture. To the opposite, for the \textit{quiet} and \textit{park} atmosphere, the evaluation is more disperse. From the comments let by the panelists, in the real scenes, the presence of too loud birds and some street noises with unknown origins have degraded the evaluation. Whereas in the simulated scenes, it is mainly the sound class \textit{foot step} and a sound background composed of birds that made the realism of the scenes decrease. \\
+For the \textit{type} dimension, the effect is still not significant ($p-value > \alpha$) contrary to the \textit{sound environment} dimension. Thus, the realism of the listened scenes seems to be more influenced by the kind of sound environment than the type of sound scenes. As the scores of the \textit{noisy} and \textit{very noisy} atmospheres are higher, it seems that the presence of cars are a preponderant element to evaluate the realism of an audio mixture. On contrary, for the \textit{quiet} and \textit{park} atmosphere, the evaluation is more complext. From the comments given by the subjects, in the real scenes, the presence of too loud birds and some street noises with unknown origins have degraded the evaluation. Whereas in the simulated scenes, it is mainly the sound class \textit{foot step} and a sound background composed of birds that made the realism of the scenes decrease. \\
 
 \section*{Conclusion}
-Realistic urban sound mixtures have been composed from the study of urban recordings. A work of annotation has allowed to extract, for different acoustic atmosphere, some useful information as the sound classes presents, the traffic flow rates, the sound level. Form these observation, a urban sound database have been created including car passages recordings. A perceptual test has been set up to prove the realism of the sound mixtures. This test revealed that the replicated scenes are mistaken with the urban recordings. Furthermore, the results shows that it is more the sound environment which impact the realism than the experience of the listener. In the \textit{park} and \textit{quiet street} environment, the evaluation are more disperses and the mean note lower than the \textit{noisy} and \textit{very noisy} atmosphere. Theses differences come from mainly from the sound level of some events which are too loud to be realistic enough but that can be improved. From theses issues, it is possible to improve again the realism  of the replicated scenes by taking these comments account.
+
+In order to study the acoustic properties of the urban environnment, the research community designs tools that have to be evaluated to demonstrate their merit. We believe to the availability of simulated scenes with precise annotation in terms of centent and level that are realistic enough will foster research in this direction.
+
+To do so, realistic urban sound mixtures have been composed from the study of urban recordings. A work of annotation has allowed to extract, for different acoustic atmosphere, some useful information as the sound classes presents, the traffic flow rates, the sound level. Form these observation, a urban sound database have been created including car passages recordings. A perceptual test has been set up to quantify the level of realism of the simulated scenes. It showed that the level of realism of the simulated scenes is comparable to the one of the recorded scenes.
+
+Furthermore, the results shows that an important factor to consider is the sound environment impacts wrt. the experience of the listener. In the \textit{park} and \textit{quiet street} environment, the evaluation are more spread and the mean note lower than the \textit{noisy} and \textit{very noisy} atmosphere. Theses differences come from mainly from the sound level of some events which are found to be too loud to be realistic enough.% but that can be improved. From theses issues, it is possible to improve again the realism  of the replicated scenes by taking these comments account.
 
 \section*{Acknowledgements}
 We would like to thank Pierre Aumond and Catherine Lavandier from the University of Cergy-Pontoise for transmitting us the data of the \textit{Grafic} project.
