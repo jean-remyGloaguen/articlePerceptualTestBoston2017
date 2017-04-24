@@ -41,7 +41,7 @@ The remaining of the paper is organized as follows, Section \ref{sec:study} focu
 
 
 \section{Study of realistic scenes} \label{sec:study}
-Real urban noise recordings are listening in details to determine the composition of typical urban sound environment in terms of sound sources, presence and level. The recordings used have been made on the \nth{13} district of Paris (France) in frame of the GRAFIC project context \cite{aumond_sound_2016} during a soundwalk which was designed to cover different types of urban sound environments. The walk was 2.1 km long, consisting of 19 stop points of 3 to 5 minutes of listening each (see figure \ref{fig:soundwalk}). It was roamed on two days (03/23/2015 and 03/30/2015) twice a day (on the morning and on the afternoon) and in one direction (from West to East, WE) and then in the other (from East to West, EW). The acquisition system used was a ASA SENS and was carry on the backpack of the operator which was walking among the participants. In the end, 74 audio in a wav format and sampled at 44,1 kHz are available and serve as a base for the study. More details can be found on  \cite{aumond_modelling_2017}. \\
+Real urban noise recordings are listened in details to determine the composition of typical urban sound environment in terms of sound sources, presence and level. The recordings considered in this study have been made on the \nth{13} district of Paris (France) as part of the GRAFIC project \cite{aumond_sound_2016} during a soundwalk which was designed to cover different types of urban sound environments. The walk was 2.1 km long, consisting of 19 stop points of 3 to 5 minutes of listening each (see figure \ref{fig:soundwalk}). It was roamed on two days (03/23/2015 and 03/30/2015) twice a day (on the morning and on the afternoon) and in one direction (from West to East, WE) and then in the other (from East to West, EW). The acquisition system used was a ASA SENS and was carried on the backpack of the operator which was walking with the participants. In the end, 74 audio pulse code modulation recordings sampled at 44,1 kHz are available and serve as a base for the study. More details can be found on  \cite{aumond_modelling_2017}. \\
 
 \begin{figure}[H]
 \centering
@@ -51,7 +51,7 @@ Real urban noise recordings are listening in details to determine the compositio
 \end{figure}
 
 
-Each audio is annotated to determine the sound classes that can be present in an urban area, their recurrence and is classified among 4 possible sound environments (\textit{park}, \textit{quiet street} , \textit{noisy street}, \textit{very noisy street}) as proposed by \cite{rychtarikova_soundscape_2013} or \cite{can_describing_2015} (table~\ref{tab:classificationScene}).
+Each audio is fully annotated in terms of sound classes that are be present in a urban area, their recurrence and is labeled using the following types of sound environments (\textit{park}, \textit{quiet street} , \textit{noisy street}, \textit{very noisy street}) as proposed by \cite{rychtarikova_soundscape_2013} or \cite{can_describing_2015} (table~\ref{tab:classificationScene}).
 
 \begin{table*}[h]
 \centering
@@ -84,7 +84,7 @@ park & {\cellcolor[HTML]{5AB25A}} & & quiet street & {\cellcolor[HTML]{FFCB2F}} 
 \label{tab:classificationScene}
 \end{table*}
 
-Most of the scene of the recordings belongs to the ambiance \textit{quiet street} and \textit{noisy street}. 2 scenes are not available : a noisy lorry sweeping the gutter is present throughout the \textit{1-WE-3} polluting the sound scene and the \textit{1-WE-19} record has been cut too quickly to be usable. From the annotation, each sound ambiance is characterized with the sound classes presents in it. The most common sound classes are resumed in the table \ref{tab:obsScene}.\\
+Most of the scene of the recordings belong to \textit{quiet street} and \textit{noisy street}. 2 scenes are not available : a noisy cleaning truck is present throughout the \textit{1-WE-3} heavily polluting the sound scene and the \textit{1-WE-19} record is too short to be considered in this study. From the annotation, each sound ambiance is characterized with the sound classes presents in it. The most common sound classes are displayed in Table \ref{tab:obsScene}.\\
 
 
 \begin{table*}[!h]
@@ -128,12 +128,12 @@ Very noisy street & 76.0        & road traffic                                  
 %\label{tab:obsScene}
 %\end{table*}
 
-The road traffic, the voice and the bird components are the most linked to the sound atmosphere: with exclusively road traffic, the sound environment is more noisy than in the \textit{park} and \textit{quiet street} where the voice and the bird's whistles are predominant. Furthermore, multiple sounds classes can be heard whatever the urban sound environments : dog barks, church bell ringing, car horn, sirens \dots with a density which can be very low (< 0.1/min). Finally, a lot of brief mechanics sounds with unknown origin can be listened in almost all the audio. Consequently, all theses indefinite sounds are classed in one unique class sound, \textit{street noise}. From theses information (density, level, sound classes present in each ambience), it is now possible to compose urban sound mixtures.
+The road traffic, the voice and the bird components are the most linked to the sound atmosphere: with exclusively road traffic, the sound environment is more noisy than in the \textit{park} and \textit{quiet street} where the voice and the bird's whistles are predominant. Furthermore, multiple sounds classes can be heard whatever the urban sound environments : dog barks, church bell ringing, car horn, sirens \dots with a density which can be very low (< 0.1/min). Finally, a lot of brief mechanics sounds with unknown origin can be listened in almost all the audio. Consequently, all these indefinite sounds are annotated in one unique class sound, \textit{street noise}. From theses information (density, level, sound classes present in each ambience), it is now possible to compose urban sound mixtures.
 
 \section{Simulation of realistic simulated urban scenes} \label{sec:simulation}
 \subsection{Presentation of the web-simulator \textit{simScene}}
-\textit{simScene} \cite{rossignol_simscene:_2015} is a web-simulator that creates sound mixtures in a wav format by superposing audio which comes from an isolated sound database composed of two categories: the brief sounds (from 1 to 20 seconds)
-that can be salient are belong to the \textit{event} category and all the sound that are long and whose acoustic properties do not vary are put in the \textit{background} category. In each category, the sounds are then regrouping in some sound classes (bird, car, foot steps \dots). The software enables to control for each sound classes some parameters as the number of events of each class that appears in the mixture, the elapsed time between each sample of a same class or the existence of a fade in and a fade out \dots. Each parameters are completed with a standard deviation bringing some random behavior between the scenes. \\
+\textit{simScene} \cite{rossignol_simscene:_2015} is a simulator that creates sound mixtures in a wav format by superposing audio which comes from an isolated sound database composed of two categories: the brief sounds (from 1 to 20 seconds)
+that are considered as salient belong to the \textit{event} category and all the sound that are of long duration and whose acoustic properties do not vary with respect to time belong to the \textit{background} category. In each category, the sounds are then grouped in sound classes (bird, car, foot steps \dots). The software enables the user to control for each sound classes some parameters as the number of events of each class that appears in the mixture, the elapsed time between each sample of a same class or the existence of a fade in and a fade out \dots. Each parameters are completed with a standard deviation optionally bringing some random behavior between the scenes. \\
 
 
 \begin{figure}[h]
@@ -144,10 +144,10 @@ that can be salient are belong to the \textit{event} category and all the sound 
 \end{figure}
 
 
-The sound mixtures can be create following two modes: the \textit{abstract} mode allows to create mixtures from the specified parameters while \textit{replicate} mode reproduces an existing scene from its annotation file which resumes the sound classes corresponding, their time of apparition and disappearance of every events. With the global sound mixture, an audio can also be created for each sound class present in the scene which allows to know their exact contribution in the scene. In parallel, \textit{simScene} generates 3 image files representing the temporal evolution, the spectrogram and a piano Roll representation to visualize each sound classes distribution and also two text files summarizing the temporal location of each sample and all the parameter used. \\
+The sound mixtures can be created following two modes: the \textit{abstract} mode allows us to create mixtures from the specified parameters while the \textit{replicate} mode reproduces an existing scene by following as much as possible its annotation file. With the global sound mixture, an audio can also be created for each sound class present in the scene which allows to know their exact contribution in the scene. %In parallel, \textit{simScene} generates 3 image files representing the temporal evolution, the spectrogram and a piano Roll representation to visualize each sound classes distribution and also two text files summarizing the temporal location of each sample and all the parameter used. \\
 
 \subsection{Creation of the urban sound database}
-Based on the annotations of the real scenes, a sound database is built with sounds found online on the \textit{freesound} project and with the urbanSound8k database\cite{salamon_dataset_nodate}. This database consists in more than 8000 files with a 4 seconds or less duration found on the web site freesound.org too, and classified in 10 sound classes : ventilation, car horn, children playing, dog barking, bell, engine idling, gunshot, jackhammer, siren and street music. All the audio have been sorted and those who presented the best signal noise ratio and are present in the sound classes identified in the real records have been selected.\\
+Based on the annotations of the real scenes, a sound database is built using the \textit{replicate} mode with sounds found online on the \textit{freesound} project and with the urbanSound8k database\cite{salamon_dataset_nodate}. This database consists in more than 8000 files with a 4 seconds or less duration found on the web site freesound.org too, and classified in 10 sound classes : ventilation, car horn, children playing, dog barking, bell, engine idling, gunshot, jackhammer, siren and street music. % ML Pas clair, est-ce utile ? All the audio have been sorted and those who presented the best signal noise ratio are selected in the sound classes identified in the real records have been selected.\\
 
 In addition, as road traffic is a prime audio source in an urban sound environment, it seemed interesting to have, in the database, a part composed of well-recorded car audio. As a result, passages of 4 different cars (Renault Scenic, Clio, Megane and Dacia Sandero) were recorded on the Ifsttar-Nantes runway at different speeds and gear ratios for steady, acceleration and braking phases (table~\ref{tab:resum_car_audio}). In all, 103 car passages have been recorded. \\
 
@@ -194,7 +194,7 @@ A median filter \cite{fitzgerald_harmonic/percussive_2010} has been applied to f
 \label{fig:filtre_car}
 \end{figure}
 
-Finally, the built database is composed of 245 sound events (bell, whistle bird, sweeping broom, car horn, car, hammer and drill, coughing, dog barking, car and house door slamming, plane, siren, foot step, thunder, street noise, suitcase rolling, train and tramway passing, truck and voice) and of 154 background sounds (birds, construction site, crowd, park, rain, schoolyard, traffic, ventilation, wind). With this built-up database, the 74 real sound scenes are replicated. To test whether the replicated scenes are sufficiently realistic, several of them are evaluated by a panel of listeners.
+Finally, the resulting database is composed of 245 sound events (bell, whistle bird, sweeping broom, car horn, car, hammer and drill, coughing, dog barking, car and house door slamming, plane, siren, foot step, thunder, street noise, suitcase rolling, train and tramway passing, truck and voice) and of 154 background sounds (birds, construction site, crowd, park, rain, schoolyard, traffic, ventilation, wind). With this built-up database, the 74 real sound scenes are replicated. To test whether the replicated scenes are sufficiently realistic, several of them are evaluated by a panel of listeners.
 
 \section{Perceptual test} \label{sec:test}
 \subsection{Creation of the test}
