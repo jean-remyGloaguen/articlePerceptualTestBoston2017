@@ -2,7 +2,7 @@
 
 \input{packageBoston}
 
-\title{Creation of a corpus of realistic urban sound scenes with controlled acoustic properties}     %% \title est une macro, entre { } figure son premier argument
+\title{Design of a urban sound scenes corpuses with controlled acoustic properties}     %% \title est une macro, entre { } figure son premier argument
 \author{
   GLOAGUEN, Jean-R\'emy\      \texttt{first1.last1@xxxxx.com}
   \and
@@ -19,16 +19,21 @@
 \maketitle
 
 \section*{Abstract}
-An approach is proposed to simulate a panel of urban sound mixtures from a study of recorded scenes. The aim is to succeed to compose sufficiently realistic scenes to be similar to recordings realized in cities. From a listening and recording phase, some parameters are extracted and can be used in the sound mixture simulator \textit{simScene}. The real scenes are then replicated and the realism of these are compared to the recorded scenes by a perceptive test realized on 50 people. The result prove that no particular differences can be made between the simulated and the real scenes. 
+
+Monitoring the acoustic urban environment is beneficial for improving the life of citizens. To do so, the research community in acoustics can befenit from corpora where the acoustic contribution of sources of disturbance such as road traffic is precisely known.
+
+In this paper, a set of urban sound mixtures are simulated using an open source tool \textit{simScene}. Their caracteristics (type of sources, density of events, etc.) are infered from the listening of reference audio scenes recorded in Paris, France. The main advantage of the simulated versions is that several quantities, such as the acoustic level of each source is precisely known, a useful feature for evaluated automated analysis tools.
+
+In order to quantifiy the level of realism achieved by the use of the simulation tool a perceptive test is conducted with 50 subjects. The result show that no significative differences can be made between the simulated and the recorded scenes.
 
 \section*{Introduction}
 
 The urban sound environment is the subject of many researches both on perspective \cite{jin_yong_soundwalk_2013} \cite{botteldooren_understanding_2011} and on physical aspects \cite{can_describing_2015} \cite{raimbault_ambient_2003}. These studies can be based on real sound environments either by acoustic listening through a \textit{soundwalk} \cite{adams_soundwalking_2008} or with recording made in city \cite{botteldooren_temporal_2006} or in a laboratory by using sound mixtures resulting from a simulation process \cite{lafay_new_2014}. In the first case, if the urban sound environment have an undeniable ecology validity, it doesn't make it possible to have a repeatable experience nor to propose a controlled framework where the presence and the level of the different sound sources can be adjusted. Then the use of a simulation tool to create specific urban sound environments is a the only way to control the presence of each class. It allows for instance to create urban sound environments by adjusting some parameters \cite{bruce_development_2009} or to test some classification or detection tools \cite{giannoulis_detection_2013} .
 
-The main question is then to get scenes that are realistic enough to be similar to the recordings. Various methods have been proposed. The first approach would be to simulate completely a neighborhood taking into account the architecture of the buildings, the sound dynamic of the different sources present (car, voice, bird, bell \dots) and their propagation to a receptor, as proposed by \cite{cstb_simulation_2015}. If the first renderings are interesting, this method stays complicated to implement with a final rendering that is again too artificial. 
-The second approach composes sound mixtures from isolated sound associated together. The idea is to consider the urban sound environment as the sum of acoustic events, i.e events with a sufficient sound level to be discernible, superposed to a sound background, i.e a sound constant on the sound mixture whose properties vary slowly during the scene. The difficulty is to create a representative database of isolated sounds with a sufficient quality to not deteriorate the sound quality and to put the acoustic events wisely to compose correct sound environments. The method proposed in \cite{misra_musical_2007} enables to resolve the first issue by extracting the acoustical event directly in real recordings and by manipulating them to re-use them in new mixtures. If the tool has a sufficient number of parameters to control the sound event, their method is limited by the extraction phase: the overlapping between the acoustics events deteriorates the sounds and then the final rendering. In more, the manipulation (duration, frequency range) can create artifacts that can be a limitation for a realistic use. In a similar way, the tool proposed by Davis and Bruce \cite{bruce_development_2009} enables to compose sound mixtures with an isolated sound database composed of recordings made specially for their application. The creation of the urban sound mixtures is made possible with the perceptual evaluation of a panel of listeners of the different sound environments. This method enables to determine which sounds are the most representative or the most linked to an urban sound environment from a perspective point of view. 
+The main question is then to get scenes that are realistic enough to be similar to the recordings. Various methods have been proposed. The first approach would be to simulate completely a neighborhood taking into account the architecture of the buildings, the sound dynamic of the different sources present (car, voice, bird, bell \dots) and their propagation to a receptor, as proposed by \cite{cstb_simulation_2015}. If the first renderings are interesting, this method stays complicated to implement with a final rendering that is again too artificial.
+The second approach composes sound mixtures from isolated sound associated together. The idea is to consider the urban sound environment as the sum of acoustic events, i.e events with a sufficient sound level to be discernible, superposed to a sound background, i.e a sound constant on the sound mixture whose properties vary slowly during the scene. The difficulty is to create a representative database of isolated sounds with a sufficient quality to not deteriorate the sound quality and to put the acoustic events wisely to compose correct sound environments. The method proposed in \cite{misra_musical_2007} enables to resolve the first issue by extracting the acoustical event directly in real recordings and by manipulating them to re-use them in new mixtures. If the tool has a sufficient number of parameters to control the sound event, their method is limited by the extraction phase: the overlapping between the acoustics events deteriorates the sounds and then the final rendering. In more, the manipulation (duration, frequency range) can create artifacts that can be a limitation for a realistic use. In a similar way, the tool proposed by Davis and Bruce \cite{bruce_development_2009} enables to compose sound mixtures with an isolated sound database composed of recordings made specially for their application. The creation of the urban sound mixtures is made possible with the perceptual evaluation of a panel of listeners of the different sound environments. This method enables to determine which sounds are the most representative or the most linked to an urban sound environment from a perspective point of view.
 
-However, as the objective is to get simulated scenes that are as realistic than recordings, this method can not be used here because if this method proposes a perspective validity it can not provide an ecological one. Thus, this study proposes to create urban sound mixtures from the listening of urban audio recordings and the estimation of some parameters extracted from them to use it in an audio simulation tool. The realism of the composed scene is then tested in a perspective test. The first part focuses on the study of a recordings made in Paris, then the second part deals with the simulation tool and the last part summarizes the result obtains in the perspective test. 
+However, as the objective is to get simulated scenes that are as realistic than recordings, this method can not be used here because if this method proposes a perspective validity it can not provide an ecological one. Thus, this study proposes to create urban sound mixtures from the listening of urban audio recordings and the estimation of some parameters extracted from them to use it in an audio simulation tool. The realism of the composed scene is then tested in a perspective test. The first part focuses on the study of a recordings made in Paris, then the second part deals with the simulation tool and the last part summarizes the result obtains in the perspective test.
 
 
 \section{Study of realistic scenes}
@@ -50,12 +55,12 @@ Each audio is annotated to determine the sound classes that can be present in an
 \begin{tabular}{|c|c|*{19}{l|}}
 \hline
 \multicolumn{1}{|l|}{\textbf{day}} & \textbf{journey}   & 1                        & 2                        & 3                        & 4                        & 5                        & 6                        & 7                        & 8                        & 9                        & 10                       & 11                       & 12                       & 13                       & 14                       & 15                       & 16                       & 17                       & 18                       & 19                       \\ \hline
-\multirow{2}{*}{\textbf{1}} & \textbf{EW} & \cellcolor[HTML]{F56B00} & \cellcolor[HTML]{F56B00} & \cellcolor[HTML]{5AB25A} & \cellcolor[HTML]{FFCB2F} & \cellcolor[HTML]{FFCB2F} & \cellcolor[HTML]{F56B00} & \cellcolor[HTML]{FFCB2F} & \cellcolor[HTML]{5AB25A} & \cellcolor[HTML]{F56B00} & \cellcolor[HTML]{5AB25A} & \cellcolor[HTML]{FFCB2F} & \cellcolor[HTML]{F56B00} & \cellcolor[HTML]{FFCB2F} & \cellcolor[HTML]{FFCB2F} & \cellcolor[HTML]{F56B00} & \cellcolor[HTML]{9A0000} & \cellcolor[HTML]{FFCB2F} & \cellcolor[HTML]{F56B00} & \cellcolor[HTML]{5AB25A} \\ 
-\cline{2-20} 
- & \textbf{WE} & \cellcolor[HTML]{F56B00} & \cellcolor[HTML]{F56B00} &                          & \cellcolor[HTML]{FFCB2F} & \cellcolor[HTML]{FFCB2F} & \cellcolor[HTML]{FFCB2F} & \cellcolor[HTML]{FFCB2F} & \cellcolor[HTML]{FFCB2F} & \cellcolor[HTML]{F56B00} & \cellcolor[HTML]{F56B00} & \cellcolor[HTML]{FFCB2F} & \cellcolor[HTML]{F56B00} & \cellcolor[HTML]{FFCB2F} & \cellcolor[HTML]{FFCB2F} & \cellcolor[HTML]{9A0000} & \cellcolor[HTML]{9A0000} & \cellcolor[HTML]{FFCB2F} & \cellcolor[HTML]{F56B00} &  \\ 
+\multirow{2}{*}{\textbf{1}} & \textbf{EW} & \cellcolor[HTML]{F56B00} & \cellcolor[HTML]{F56B00} & \cellcolor[HTML]{5AB25A} & \cellcolor[HTML]{FFCB2F} & \cellcolor[HTML]{FFCB2F} & \cellcolor[HTML]{F56B00} & \cellcolor[HTML]{FFCB2F} & \cellcolor[HTML]{5AB25A} & \cellcolor[HTML]{F56B00} & \cellcolor[HTML]{5AB25A} & \cellcolor[HTML]{FFCB2F} & \cellcolor[HTML]{F56B00} & \cellcolor[HTML]{FFCB2F} & \cellcolor[HTML]{FFCB2F} & \cellcolor[HTML]{F56B00} & \cellcolor[HTML]{9A0000} & \cellcolor[HTML]{FFCB2F} & \cellcolor[HTML]{F56B00} & \cellcolor[HTML]{5AB25A} \\
+\cline{2-20}
+ & \textbf{WE} & \cellcolor[HTML]{F56B00} & \cellcolor[HTML]{F56B00} &                          & \cellcolor[HTML]{FFCB2F} & \cellcolor[HTML]{FFCB2F} & \cellcolor[HTML]{FFCB2F} & \cellcolor[HTML]{FFCB2F} & \cellcolor[HTML]{FFCB2F} & \cellcolor[HTML]{F56B00} & \cellcolor[HTML]{F56B00} & \cellcolor[HTML]{FFCB2F} & \cellcolor[HTML]{F56B00} & \cellcolor[HTML]{FFCB2F} & \cellcolor[HTML]{FFCB2F} & \cellcolor[HTML]{9A0000} & \cellcolor[HTML]{9A0000} & \cellcolor[HTML]{FFCB2F} & \cellcolor[HTML]{F56B00} &  \\
  \hline
-\multirow{2}{*}{\textbf{2}} & \textbf{EW} & \cellcolor[HTML]{F56B00} & \cellcolor[HTML]{F56B00} & \cellcolor[HTML]{5AB25A} & \cellcolor[HTML]{FFCB2F} & \cellcolor[HTML]{FFCB2F} & \cellcolor[HTML]{FFCB2F} & \cellcolor[HTML]{FFCB2F} & \cellcolor[HTML]{FFCB2F} & \cellcolor[HTML]{F56B00} & \cellcolor[HTML]{F56B00} & \cellcolor[HTML]{FFCB2F} & \cellcolor[HTML]{F56B00} & \cellcolor[HTML]{FFCB2F} & \cellcolor[HTML]{F56B00} & \cellcolor[HTML]{9A0000} & \cellcolor[HTML]{9A0000} & \cellcolor[HTML]{FFCB2F} & \cellcolor[HTML]{F56B00} & \cellcolor[HTML]{5AB25A} \\ 
-\cline{2-20} 
+\multirow{2}{*}{\textbf{2}} & \textbf{EW} & \cellcolor[HTML]{F56B00} & \cellcolor[HTML]{F56B00} & \cellcolor[HTML]{5AB25A} & \cellcolor[HTML]{FFCB2F} & \cellcolor[HTML]{FFCB2F} & \cellcolor[HTML]{FFCB2F} & \cellcolor[HTML]{FFCB2F} & \cellcolor[HTML]{FFCB2F} & \cellcolor[HTML]{F56B00} & \cellcolor[HTML]{F56B00} & \cellcolor[HTML]{FFCB2F} & \cellcolor[HTML]{F56B00} & \cellcolor[HTML]{FFCB2F} & \cellcolor[HTML]{F56B00} & \cellcolor[HTML]{9A0000} & \cellcolor[HTML]{9A0000} & \cellcolor[HTML]{FFCB2F} & \cellcolor[HTML]{F56B00} & \cellcolor[HTML]{5AB25A} \\
+\cline{2-20}
  & \textbf{WE} & \cellcolor[HTML]{F56B00} & \cellcolor[HTML]{F56B00} & \cellcolor[HTML]{5AB25A} & \cellcolor[HTML]{FFCB2F} & \cellcolor[HTML]{FFCB2F} & \cellcolor[HTML]{FFCB2F} & \cellcolor[HTML]{FFCB2F} & \cellcolor[HTML]{FFCB2F} & \cellcolor[HTML]{F56B00} & \cellcolor[HTML]{FFCB2F} & \cellcolor[HTML]{FFCB2F} & \cellcolor[HTML]{FFCB2F} & \cellcolor[HTML]{FFCB2F} & \cellcolor[HTML]{FFCB2F} & \cellcolor[HTML]{9A0000} & \cellcolor[HTML]{9A0000} & \cellcolor[HTML]{FFCB2F} & \cellcolor[HTML]{9A0000} & \cellcolor[HTML]{5AB25A} \\ \hline
 \end{tabular}
 
@@ -82,17 +87,17 @@ Most of the scene of the recordings belongs to the ambiance \textit{quiet street
 \centering
 \begin{tabular}{L{2.5cm} | C{2.5cm} | c | C{3cm} | C{2.5cm}}
 \centering \textbf{Sound environment} & \textbf{Sound level (dB)} & \textbf{Background                                                       } &\textbf{Event} & \textbf{number events/min} \\ \hline
-Park              & 69.0        & 
-\begin{tabular}[c]{@{}l@{}}voice, \\ bird's whistles\end{tabular} & 
-\begin{tabular}[c]{@{}l@{}}road traffic \\ voices\\ bird's whistle\\ street noise\\ foot step\end{tabular}                                         & 
+Park              & 69.0        &
+\begin{tabular}[c]{@{}l@{}}voice, \\ bird's whistles\end{tabular} &
+\begin{tabular}[c]{@{}l@{}}road traffic \\ voices\\ bird's whistle\\ street noise\\ foot step\end{tabular}                                         &
 \begin{tabular}[c]{@{}l@{}}0.5\\ 0.5\\ 0.5\\ 0.5\\ 0.3\end{tabular}                       \\\hline
-Quiet street      & 70.2        & 
-\begin{tabular}[c]{@{}l@{}}road traffic\\ bird\end{tabular}       & 
-\begin{tabular}[c]{@{}l@{}}road traffic \\ voices\\ street noises\\ foot step\\ bird\\ \begin{tabular}[c]{@{}l@{}}construction \\ \hfill site noise \end{tabular}\\ door house\\ door car\end{tabular} & 
-\begin{tabular}[c]{@{}l@{}}1.0\\ 0.7\\ 0.7\\ 0.5\\ 0.2\\ \begin{tabular}[c]{@{}l@{}} 0.1\\~\end{tabular}\\  0.2\\ 0.2\end{tabular}    
+Quiet street      & 70.2        &
+\begin{tabular}[c]{@{}l@{}}road traffic\\ bird\end{tabular}       &
+\begin{tabular}[c]{@{}l@{}}road traffic \\ voices\\ street noises\\ foot step\\ bird\\ \begin{tabular}[c]{@{}l@{}}construction \\ \hfill site noise \end{tabular}\\ door house\\ door car\end{tabular} &
+\begin{tabular}[c]{@{}l@{}}1.0\\ 0.7\\ 0.7\\ 0.5\\ 0.2\\ \begin{tabular}[c]{@{}l@{}} 0.1\\~\end{tabular}\\  0.2\\ 0.2\end{tabular}
 \\ \hline
 Noisy street      & 73.5        & road traffic                                                      & \begin{tabular}[c]{@{}l@{}}traffic\\ foot step\\ voice\\ street noise\\ bell\\ bird\\ car horn\\ car's door\\ siren\end{tabular}                   & \begin{tabular}[c]{@{}l@{}}9.0 \\ 0.5\\ 0.6\\ 0.4\\ 0.1\\ 0.2\\ 0.3\\ 0.2\\ 0.1\end{tabular} \\ \hline
-Very noisy street & 76.0        & road traffic                                                      & \begin{tabular}[c]{@{}l@{}}traffic\\ voice\\ siren\\ car horn\\ bird\\ foot step\\ car's door\\ street noise\end{tabular}                          & \begin{tabular}[c]{@{}l@{}}40\\ 0.3\\ 0.2\\ 0.3\\ 0.2\\ 0.3\\ 0.2\\ 0.3\end{tabular}      
+Very noisy street & 76.0        & road traffic                                                      & \begin{tabular}[c]{@{}l@{}}traffic\\ voice\\ siren\\ car horn\\ bird\\ foot step\\ car's door\\ street noise\end{tabular}                          & \begin{tabular}[c]{@{}l@{}}40\\ 0.3\\ 0.2\\ 0.3\\ 0.2\\ 0.3\\ 0.2\\ 0.3\end{tabular}
 \end{tabular}
 \caption{Sound level and classes presents depending on the sound environment}
 \label{tab:obsScene}
@@ -105,14 +110,14 @@ Very noisy street & 76.0        & road traffic                                  
 %\begin{tabular}{p{3cm}p{2cm}p{10.5cm}}
 %\hline
 %\multicolumn{1}{c}{\textbf{Ambience}} &\textbf{\begin{tabular}[c]{@{}c@{}}level\\ (dB SPL)\end{tabular}} & \multicolumn{1}{c}{\textbf{Description}} \\ \hline
-%park & \centering 69,0 & predominance of children's and adults' voices and bird whistles as sound events and backgrounds, the road traffic is low almost non-existent ($\approx$ 1 car/min) \\ 
+%park & \centering 69,0 & predominance of children's and adults' voices and bird whistles as sound events and backgrounds, the road traffic is low almost non-existent ($\approx$ 1 car/min) \\
 %\hline
-%quiet street & \centering 70,2 & The background noise is caused by a low road traffic with few car passages ($\approx$ 2 car/min), the birds are present and audible, the voice is composed of children's and adult's voices. The effect of reverberation on the street, due to low background noise, is present.\\ 
+%quiet street & \centering 70,2 & The background noise is caused by a low road traffic with few car passages ($\approx$ 2 car/min), the birds are present and audible, the voice is composed of children's and adult's voices. The effect of reverberation on the street, due to low background noise, is present.\\
 %\hline
-%animated street & \centering 73,5 & traffic noise  is louder and the unique background, the car passages density is higher ($\approx$ 10 car/min), the human activity is more present and diversify (voice, step, suitcase, construction site noise \dots), the birds disappear. \\ 
+%animated street & \centering 73,5 & traffic noise  is louder and the unique background, the car passages density is higher ($\approx$ 10 car/min), the human activity is more present and diversify (voice, step, suitcase, construction site noise \dots), the birds disappear. \\
 %\hline
-%very noisy street & \centering 76,0 & the background noise very high composed of quasi-constant traffic flow ($\sup$ 40 car/min), the human activity are less presents in a favor of voice hubbub.\\  
-%\hline   
+%very noisy street & \centering 76,0 & the background noise very high composed of quasi-constant traffic flow ($\sup$ 40 car/min), the human activity are less presents in a favor of voice hubbub.\\
+%\hline
 %
 %\end{tabular}
 %\caption{Qualitative observations on the urban sound environment}
@@ -148,13 +153,13 @@ In addition, as road traffic is a prime audio source in an urban sound environme
         \begin{tabular}{|c|c|lllll}
 \cline{2-7}
 \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\textbf{Trans.}} & \multicolumn{1}{l|}{\textbf{1}} & \multicolumn{1}{l|}{\textbf{2}} & \multicolumn{1}{l|}{\textbf{3}} & \multicolumn{1}{l|}{\textbf{4}} & \multicolumn{1}{l|}{\textbf{5}} \\ \hline
-\multicolumn{1}{|c|}{\multirow{8}{*}{\begin{tabular}[c]{@{}c@{}}\textbf{stabilized}\\   \textbf{speed}\\   \textbf{(km/h)}\end{tabular}}} & \textbf{20} & \multicolumn{1}{l|}{$\times$} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ \cline{2-7} 
-\multicolumn{1}{|c|}{} & \textbf{30} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{$\times$} & \multicolumn{1}{l|}{$\times$} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ \cline{2-7} 
-\multicolumn{1}{|c|}{} & \textbf{40} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{$\times$} & \multicolumn{1}{l|}{$\times$} & \multicolumn{1}{l|}{$\times$} & \multicolumn{1}{l|}{} \\ \cline{2-7} 
-\multicolumn{1}{|c|}{} & \textbf{50} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{$\times$} & \multicolumn{1}{l|}{$\times$} & \multicolumn{1}{l|}{} \\ \cline{2-7} 
-\multicolumn{1}{|c|}{} & \textbf{60} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{$\times$} & \multicolumn{1}{l|}{$\times$} \\ \cline{2-7} 
-\multicolumn{1}{|c|}{} & \textbf{70} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{$\times$} & \multicolumn{1}{l|}{$\times$} \\ \cline{2-7} 
-\multicolumn{1}{|c|}{} & \textbf{80} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{$\times$} \\ \cline{2-7} 
+\multicolumn{1}{|c|}{\multirow{8}{*}{\begin{tabular}[c]{@{}c@{}}\textbf{stabilized}\\   \textbf{speed}\\   \textbf{(km/h)}\end{tabular}}} & \textbf{20} & \multicolumn{1}{l|}{$\times$} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ \cline{2-7}
+\multicolumn{1}{|c|}{} & \textbf{30} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{$\times$} & \multicolumn{1}{l|}{$\times$} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ \cline{2-7}
+\multicolumn{1}{|c|}{} & \textbf{40} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{$\times$} & \multicolumn{1}{l|}{$\times$} & \multicolumn{1}{l|}{$\times$} & \multicolumn{1}{l|}{} \\ \cline{2-7}
+\multicolumn{1}{|c|}{} & \textbf{50} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{$\times$} & \multicolumn{1}{l|}{$\times$} & \multicolumn{1}{l|}{} \\ \cline{2-7}
+\multicolumn{1}{|c|}{} & \textbf{60} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{$\times$} & \multicolumn{1}{l|}{$\times$} \\ \cline{2-7}
+\multicolumn{1}{|c|}{} & \textbf{70} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{$\times$} & \multicolumn{1}{l|}{$\times$} \\ \cline{2-7}
+\multicolumn{1}{|c|}{} & \textbf{80} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{$\times$} \\ \cline{2-7}
 \multicolumn{1}{|c|}{} & \textbf{90} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{$\times$} \\ \hline
 \end{tabular}
     \end{minipage}
@@ -172,12 +177,12 @@ In addition, as road traffic is a prime audio source in an urban sound environme
 80 → 50 & \begin{tabular}[c]{@{}l@{}}4 or 5\\ → 3\end{tabular} & 50 → 70 & \begin{tabular}[c]{@{}l@{}}3 → \\ 4 or 5\end{tabular} \\ \hline
 \end{tabular}
     \end{minipage}%
-    \caption{Measurement set on runway with vehicle passages with stabilized speed (left) and in acceleration and braking phase(right)} 
+    \caption{Measurement set on runway with vehicle passages with stabilized speed (left) and in acceleration and braking phase(right)}
     \label{tab:resum_car_audio}
 \end{table*}
 
 A median filter \cite{fitzgerald_harmonic/percussive_2010} has been applied to filter out bird's whistles from the recordings in the frequency range $\left[ 2500-6500 \right]$ Hz. It   consists in taking a window around a center point and to attribute to it the median value of this window. This method allow to attenuate the brief variations both in the harmonic and the temporal plan. The size of the filter window is chosen with a 5 points width of and a 9 points height so that the effect of the filter is sufficient without deteriorating the quality of the audio (see figure \ref{fig:filtre_car}).
- 
+
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width=\linewidth]{./pictures/filtrageMedian_VL1_R3_40_EN.pdf}
@@ -191,7 +196,7 @@ Finally, the built database is composed of 245 sound events (bell, whistle bird,
 \subsection{Creation of the test}
 A perspective test is created where a panel of listeners evaluates the realism of a mix of real and replicated scenes on a 7-point scale (1 is \textit{not realistic at all}, 7 is \textit{very realistic}). Since it is not possible for each panelist to evaluate all the real and replicated scenes, in order to limit the duration of the test and to keep the judge's concentration constant, each listens a panel of 20 sound scenes composed of 10 real sounds scenes and 10 replicated. Furthermore, for the auditory comfort of the panelist, all the scenes are normalized to the same sound level, chosen at 65 dB.\\
 
-First, the listening plan is elaborated following a Balanced Incomplete Block Design \cite{dagnelie_principes_2003} where $J$ participants realized $K$ evaluations from $B$ sound sources, each of them are tested $R$ times and each couple of sound sources are presented $\lambda$ times. 3 rules govern these parameters : 
+First, the listening plan is elaborated following a Balanced Incomplete Block Design \cite{dagnelie_principes_2003} where $J$ participants realized $K$ evaluations from $B$ sound sources, each of them are tested $R$ times and each couple of sound sources are presented $\lambda$ times. 3 rules govern these parameters :
 \begin{subequations}\label{eq:BIE_cond}
 \begin{align}
 J &\geq B, \label{eq:BIE_cond1}\\
@@ -213,22 +218,22 @@ A web-page\footnote{http://soundthings.org/research/xpRealism} was uploaded on t
 
 %\begin{figure}[ht]
 %\centering
-%\includegraphics[width=\linewidth]{../../../Pictures/test_perceptif/testPerceptif_panel.pdf} 
+%\includegraphics[width=\linewidth]{../../../Pictures/test_perceptif/testPerceptif_panel.pdf}
 %\caption{Description of the panel information}
 %\label{fig:panel}
 %\end{figure}
 
 
- 
+
 \subsection{Results}
- 
-An analyze of variance (ANOVA) is performed to see if both type of scenes can be discernible. 2 hypothesis are then possible : $H_0$, the real and replicates scenes can not be discernible, and $H_1$, both scenes are perceived with differences. For that, an threshold significance $\alpha=0,05$ is compared to the \textit{p-value} calculated by the ANOVA. This value represents probability to have an extreme value or more than the actual data observed considering the $H_0$ hypothesis. Two situations can happen : 
+
+An analyze of variance (ANOVA) is performed to see if both type of scenes can be discernible. 2 hypothesis are then possible : $H_0$, the real and replicates scenes can not be discernible, and $H_1$, both scenes are perceived with differences. For that, an threshold significance $\alpha=0,05$ is compared to the \textit{p-value} calculated by the ANOVA. This value represents probability to have an extreme value or more than the actual data observed considering the $H_0$ hypothesis. Two situations can happen :
 \begin{itemize}
-\item $\alpha > p-value$, the $H_1$ hypothesis is validated and $H_0$ is rejected, 
+\item $\alpha > p-value$, the $H_1$ hypothesis is validated and $H_0$ is rejected,
 \item $\alpha < p-value$, the $H_0$ is not rejected.
 \end{itemize}
 
-The data are represented by a box-and-whiskers plot according their type. 
+The data are represented by a box-and-whiskers plot according their type.
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width=\linewidth]{./pictures/testPerceptif_boxplotType_EN.pdf}
@@ -247,7 +252,7 @@ Secondly, an ANOVA is performed to determine if the experience in the listening 
           & type & experience & interaction \\
 \hline
 $p-value$ & 0.50 & 0.05 & 0.17 \\
-\hline    
+\hline
 \end{tabular}
 \caption{$p-value$ for the ANOVA at two dimensions with the interaction effect}
 \label{tab:p_value_type_exp}
@@ -255,7 +260,7 @@ $p-value$ & 0.50 & 0.05 & 0.17 \\
 
 The dimensions and their interaction are not significantly influential since their $ p-value $ is equal to or greater than the $ \alpha$ significance threshold. This means that even listeners trained to hear urban sound environments do not dissociate the real scenes from the simulated ones.\\
 
-A last ANOVA is performed with 2 dimensions to see if the scenes according to the \textit{type} and their \textit{sound environment} are evaluated differently (figure~\ref{fig:boxplot_type_ambience} and table \ref{tab:p_value_type_ambience}). 
+A last ANOVA is performed with 2 dimensions to see if the scenes according to the \textit{type} and their \textit{sound environment} are evaluated differently (figure~\ref{fig:boxplot_type_ambience} and table \ref{tab:p_value_type_ambience}).
 
 \begin{figure}[h]
 \centering
@@ -271,7 +276,7 @@ A last ANOVA is performed with 2 dimensions to see if the scenes according to th
           & type   & sound env. & interaction \\
 \hline
 $p-value$ & $0.13$ & $0.80 \times 10^{-3}$     & $2.20 \times 10^{-3}$ \\
-\hline    
+\hline
 \end{tabular}
 \caption{$p-value$ for the anova at two dimensions with the interaction effect}
 \label{tab:p_value_type_ambience}
@@ -283,7 +288,7 @@ For the \textit{type} dimension, the effect is still not significance ($p-value 
 Realistic urban sound mixtures have been composed from the study of urban recordings. A work of annotation has allowed to extract, for different acoustic atmosphere, some useful information as the sound classes presents, the traffic flow rates, the sound level. Form these observation, a urban sound database have been created including car passages recordings. A perceptual test has been set up to prove the realism of the sound mixtures. This test revealed that the replicated scenes are mistaken with the urban recordings. Furthermore, the results shows that it is more the sound environment which impact the realism than the experience of the listener. In the \textit{park} and \textit{quiet street} environment, the evaluation are more disperses and the mean note lower than the \textit{noisy} and \textit{very noisy} atmosphere. Theses differences come from mainly from the sound level of some events which are too loud to be realistic enough but that can be improved. From theses issues, it is possible to improve again the realism  of the replicated scenes by taking these comments account.
 
 \section*{Acknowledge}
-We would like to thank Pierre Aumond and Catherine Lavandier from the University of Cergy-Pontoise for transmitting us the data of the \textit{Grafic} project. 
+We would like to thank Pierre Aumond and Catherine Lavandier from the University of Cergy-Pontoise for transmitting us the data of the \textit{Grafic} project.
 
 \bibliographystyle{unsrt}
 \bibliography{bibliography}
