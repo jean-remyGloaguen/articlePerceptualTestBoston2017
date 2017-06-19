@@ -29,7 +29,7 @@
 
 \title[Acoustics'17 Boston]{Creation of a corpus of realistic urban sound scenes with controlled acoustic properties}
 \author[J. Gloaguen]{\emph{Jean-R\'emy Gloaguen}$^1$,  Arnaud Can$^1$,\\ Mathieu Lagrange$^2$,  Jean-Fran\c cois Petiot$^2$}
-\institute[Ifsttar]{$^1$French Institute of Science and Technology for Transport, Development and Networks, \\ Environmental Acoustics Laboratory \\Allée des Ponts et Chaussées, Route de Bouaye, - CS4, 44344 Bouguenais Cedex, FR  \\ \vspace{.25cm} $^2$Nantes' Numeric Sciences Laboratory, \\1, rue de la Noë, BP 92101, 44321 Nantes Cedex 3, FR}
+\institute[Ifsttar]{$^1$French Institute of Science and Technology for Transport, Development and Networks, \\ Environmental Acoustics Laboratory \\Allée des Ponts et Chaussées, Route de Bouaye, - CS4, 44344 Bouguenais Cedex, FR  \\ \vspace{.25cm} $^2$ LS2N, \\1, rue de la Noë, BP 92101, 44321 Nantes Cedex 3, FR}
 \date[06/29/2017]{Acoustics' 17 Boston\\06/29/2017}
 
 
@@ -54,15 +54,15 @@
 \begin{itemize}
 	\item Subject of many researches both on perceptual and physical aspects
 	\item Based on real sound environments with \textit{soundwalks} or recordings listened on laboratory\\
-	$\Rightarrow$ ecological validity \\
+	$\Rightarrow$ good ecological validity \\
 	$\Rightarrow$ no controlled framework \\
 	$\Rightarrow$ no repeatable experience \\
-		
+
 	\item Based on sound mixtures based on simulation process
-		
+
 		$\Rightarrow$ controlled framework  \\
 		$\Rightarrow$ creation of specific urban sound environments \\
-		$\Rightarrow$ no ecological validity \\
+		$\Rightarrow$ low ecological validity \\
 \end{itemize}
 
 \end{block}
@@ -97,8 +97,9 @@ How can we simulate sound mixtures of urban sound environments that are realisti
 
 \begin{block}{Proposition}
 \begin{itemize}
-	\item Use real recordings to base the distribution of the events
-	\item Validate the realism of the sound mixtures obtained with a perceptual test
+	\item Transcribe real recordings
+	\item use the transcription to simulate controled stimuli
+	\item Validate the realism of the simulated sound mixtures obtained with a perceptual test
 \end{itemize}
 
 \end{block}
@@ -118,25 +119,25 @@ How can we simulate sound mixtures of urban sound environments that are realisti
 
 \section{SimScene: a simulation tool}
 
-\begin{frame}{\textit{SimScene}: a web-simulator to design sound environments (REF)}
+\begin{frame}{\textit{SimScene}: a simulator to design sound environments \footnote{\url{https://bitbucket.org/mlagrange/simscene}}}
 \begin{block}{Principe}
 \begin{itemize}
-	\item Superpose sound events and a background from an isolated sound database
+	\item Mix sound events and a background taken from an isolated sound database
 	\item Control a set of high level parameters
 	\begin{itemize}
-		\item presence time and sound level of each sound class
+		\item onset time and sound level of each sound class
 		\item number of occurrence of a sound class
 	\end{itemize}
 	\item Standard deviation on each parameter to bring random behavior
-	\item Generate a separate audio file for each sound class present\\
+	\item Generate a separate audio file for each sound class \\
 	$\Rightarrow$ enable to know their exact contribution
-	
+
 \end{itemize}
 \end{block}
 
 \begin{block}{2 modes to design the sound mixtures}
 \begin{itemize}
-	\item \textit{abstract}: the user fills all the information 
+	\item \textit{abstract}: the user sets abstract information (mean / variance)
 	\item \textit{replicate}: the sound classes and the temporal position of each events come from an annotated text file
 \end{itemize}
 \end{block}
@@ -158,8 +159,8 @@ How can we simulate sound mixtures of urban sound environments that are realisti
 \begin{block}{Recordings of car passages on Ifsttar-Nantes runway}
 \begin{itemize}
 	\item 4 cars (Renault Senic, Megane, Clio and Dacia Sandero)
-	\item 104 car passages recorded for constant speeds (from 20 to 90 km/h), acceleration and braking phase for multiple gear ratios and stopped car 
-\end{itemize}		
+	\item 104 car passages recorded for constant speeds (from 20 to 90 km/h), acceleration and braking phase for multiple gear ratios and stopped car
+\end{itemize}
 \end{block}
 
 \begin{block}{To sum up}
@@ -184,7 +185,7 @@ How can we simulate sound mixtures of urban sound environments that are realisti
 	 \item 19 recorded points on a define path
 	 \item Recordings made on 2 days (03/23/2015 and 03/30/2015), twice a day
 	 \item Among the 76 audio files available, 74 are used
-	 \item Multiple sound environments 
+	 \item Multiple sound environments
 	 \begin{itemize}
 	 	\item \textit{Park}, \textit{quiet street}, \textit{noisy street} and \textit{very noisy street}
 	 \end{itemize}
@@ -205,11 +206,11 @@ How can we simulate sound mixtures of urban sound environments that are realisti
 
 \begin{frame}{Study of urban sound recordings}
 \begin{itemize}
-	\item Annotation of each audio file 
+	\item Annotation of each audio file
 	\begin{itemize}
 		\item sound classes, begin and end times
 	\end{itemize}
-	
+
 
 \end{itemize}
 
@@ -217,15 +218,15 @@ How can we simulate sound mixtures of urban sound environments that are realisti
 \begin{itemize}
 	\item Synthesis of the 74 real scenes with \textit{simScene} with the \textit{replicate} mode
 	\item 15 seconds example of a simulated scene\\
-	
+
 \centering
-\includemedia[addresource=15sExample_22.mp3, 
+\includemedia[addresource=15sExample_22.mp3,
 flashvars={source=15sExample_22.mp3&autoPlay=true}]{\fbox{Play}}{APlayer.swf}
-	
+
 \end{itemize}
 \end{block}
 \vspace{0.5cm}
-$\Rightarrow$ Are the simulated scenes realistic enough ? 
+$\Rightarrow$ Are the simulated scenes realistic enough ?
 
 \end{frame}
 
@@ -249,14 +250,14 @@ $\Rightarrow$ Are the simulated scenes realistic enough ?
 		\item Normalization to the same the sound level
 		\item 20 audio files from the real recordings and the same 20 replicated
 	\end{itemize}
-	
-	\item 50 participants \\	
+
+	\item 50 participants \\
 	$\Rightarrow$ Each judge cannot evaluate all the scene
 \end{itemize}
 
 \begin{block}{Partially Balanced Incomplete Block Design}
 \begin{itemize}
-	\item 20 audio files listen by each judge 
+	\item 20 audio files listen by each judge
 	\item Design the order of listening for each judge with a fair statistical distribution
 	\item Each judge listen a mix of 10 real and 10 replicated scenes
 \end{itemize}
@@ -274,13 +275,13 @@ $\Rightarrow$ Are the simulated scenes realistic enough ?
 	\item For each scene listened
 	\begin{itemize}
 		\item answer to the question 'Is the scene you listen seems, to you, realistic ?'
-		\item evaluation on a 7 points scale 
+		\item evaluation on a 7 points scale
 		\item possibility to re-listen the scene and to put a comment
 	\end{itemize}
 	\item The gender (H/F), the age and the experience in the listening of urban sound environments are then asked
 \end{itemize}
 
-\begin{block}{Constitution of the panel}
+\begin{block}{The panel}
 \begin{itemize}
 	\item 18 females and 31 males (1 not documented)
 	\item Average age : 36 ($\pm$ 12) years old
@@ -297,9 +298,9 @@ $\Rightarrow$ Are the simulated scenes realistic enough ?
 %
 %\begin{block}{ANalyse Of VAriance}
 %\begin{itemize}
-%	\item ANOVA to evaluate 
+%	\item ANOVA to evaluate
 %	\item $H_0$ hypothesis : the distribution of note between the real and the simulated scenes cannot be discernible
-%	\item $H_0$ hypothesis rejected if \textit{p-value} $< \alpha = 0.05$ 
+%	\item $H_0$ hypothesis rejected if \textit{p-value} $< \alpha = 0.05$
 %\end{itemize}
 %\end{block}
 %
@@ -328,10 +329,10 @@ $\Rightarrow$ Are the simulated scenes realistic enough ?
 
 \footnotesize
 \begin{tabular}{lccc}
-	& DOF & $\vert t \vert$    & \textit{p-value} \\ 
+	& DOF & $\vert t \vert$    & \textit{p-value} \\
 \hline
 type & 49 & 1.37 & 0.17    \\
-\hline 
+\hline
 \end{tabular}
 \captionof{table}{\footnotesize Paired sample \textit{t-test} }
 \label{blablatab}
@@ -363,20 +364,20 @@ $\Rightarrow$ Validation of the urban sound mixtures realism
 \begin{figure}
 \begin{flushleft}
 
-\begin{minipage}[l]{.4\linewidth}		
+\begin{minipage}[l]{.4\linewidth}
 \includegraphics[width=\textwidth]{pictures/testPerceptif_boxplotAmbianceCOLOR_EN.pdf}
 \captionof{figure}{\footnotesize Data distribution for the 'scene type' and 'sound environment' factors}
-\end{minipage}% à retirer pour voir la différence.	
+\end{minipage}% à retirer pour voir la différence.
 \begin{minipage}[r]{.5\linewidth}
 \footnotesize
 \begin{tabular}{p{2.35cm}p{0.5cm}p{0.95cm}p{1.65cm}}
-        &  DOF &  \textit{F-stat.}    &  \textit{p-value} \\ 
+        &  DOF &  \textit{F-stat.}    &  \textit{p-value} \\
 \hline
  type &  1 &  1.38 &  0.24   \\
 \hline
- sound env.   &  3 &  4.69 &  3.60$\times 10^{-3}$  \\ 
+ sound env.   &  3 &  4.69 &  3.60$\times 10^{-3}$  \\
 \hline
- judge   &  49 &  5.00 &  0.18$\times 10^{-9}$  \\ 
+ judge   &  49 &  5.00 &  0.18$\times 10^{-9}$  \\
 \hline
  type/sound env. &  3 &  6.80 &  0.20$\times 10^{-3}$\\
 \hline
@@ -406,13 +407,13 @@ $\Rightarrow$ Validation of the urban sound mixtures realism
 
 \begin{frame}{Results}
 \begin{block}{Interaction between the 'type' and 'sound environment' factors}
-\begin{minipage}[l]{0.5\linewidth}		
+\begin{minipage}[l]{0.5\linewidth}
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width=\textwidth]{pictures/testPerceptif_interactionAmbianceCOLOR_EN.pdf}
 \caption{Mean scores for the 4 sound environments according to the type}
 \end{figure}
-\end{minipage}% à retirer pour voir la différence.	
+\end{minipage}% à retirer pour voir la différence.
 \begin{minipage}[c]{0.5\linewidth}
 \begin{itemize}
 \footnotesize
@@ -433,8 +434,8 @@ $\Rightarrow$ Validation of the urban sound mixtures realism
 \begin{frame}{Conclusion}
 
 \begin{itemize}
-\item Design of a corpus of realistic urban scenes 
-\item Based on the annotation of 74 real recordings 
+\item Design of a corpus of realistic urban scenes
+\item Based on the annotation of 74 real recordings
 \item Use of the simulation software \textit{simScene}
 \item Representative sound database of isolated sounds with car passages recorded specifically
 \item The realism of the simulated scene is validated by a perceptual test
